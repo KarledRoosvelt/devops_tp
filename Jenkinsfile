@@ -5,7 +5,7 @@ pipeline {
         IMAGE_NAME      = "sum-python-app"
         CONTAINER_NAME  = "sum_container_${BUILD_NUMBER}"   // nom unique à chaque build
         TEST_FILE_PATH  = "test_variables.txt"
-        DOCKERHUB_IMAGE = "yourdockerhub/sum-python-app"    // change si tu déploies
+        DOCKERHUB_IMAGE = "karledroosvelt/sum-python-app"    // image docker
     }
 
     stages {
