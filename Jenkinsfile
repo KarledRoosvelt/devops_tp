@@ -41,7 +41,7 @@ pipeline {
 
                         def a = parts[0]
                         def b = parts[1]
-                        def expected = parts[2].toBigDecimal()
+                        def expected = parts[2].toDouble()
 
                         // Exécute sum.py dans le conteneur
                         def out = bat(
@@ -50,7 +50,7 @@ pipeline {
                         ).trim()
 
                         // Le résultat est la dernière ligne utile
-                        def result = out.split('\\r?\\n')[-1].trim().toBigDecimal()
+                        def result = out.split('\\r?\\n')[-1].trim().toDouble()
 
                         if (result == expected) {
                             echo "OK: ${a} + ${b} = ${result}"
