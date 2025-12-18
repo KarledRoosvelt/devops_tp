@@ -77,8 +77,7 @@ pipeline {
         }
     }
 }
-
-    post {
+        post {
         always {
             // Nettoyage: stop + rm même si Test échoue
             bat "docker rm -f %CONTAINER_NAME%"
