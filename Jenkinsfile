@@ -63,11 +63,10 @@ pipeline {
         }
 
         stage('Deploy') {
-            when { expression { return true } } // mets true si tu veux activer le déploiement
-            steps {
-                bat "docker login"
-                bat "docker tag %IMAGE_NAME% %DOCKERHUB_IMAGE%"
-                bat "docker push %DOCKERHUB_IMAGE%"
+    steps {
+        bat "docker login"
+        bat "docker tag %IMAGE_NAME% %DOCKERHUB_IMAGE%:latest"
+        bat "docker push %DOCKERHUB_IMAGE%:latest"
             }
         }
     }
