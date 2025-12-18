@@ -52,7 +52,7 @@ pipeline {
                         // Le résultat est la dernière ligne utile
                         def result = out.split('\\r?\\n')[-1].trim().toDouble()
 
-                        if (result == expected) {
+                        if (Math.abs(result - expected) < 0.0001) {
                             echo "OK: ${a} + ${b} = ${result}"
                         } else {
                             error "FAILED: ${a} + ${b} => obtenu ${result}, attendu ${expected}"
